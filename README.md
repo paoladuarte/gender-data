@@ -13,14 +13,18 @@ The script `kantrowitz.r` generates a usable data frame stored in
 
 A better method is the to use the [Social Security Administration's baby
 names by year][], which contains 91,320 unique names from people born
-between 1880 and 2012. (See also the [Social Security Administration's
-baby names by year and state][].) Furthermore, this data includes the
-number of males and females born with those names. Thus not only is it
-possible to identify gender as name use varies over time, it is also
-possible to calculate the proportion of male and females with a
-particular name. The raw data is stored in the `ssa` directory. The
-script `ssa.r` generates a usable data frame stored in
-`ssa_national.csv` or `ssa_national.rda`.
+between 1880 and 2012. Furthermore, this data includes the number of
+males and females born with those names. Thus not only is it possible to
+identify gender as name use varies over time, it is also possible to
+calculate the proportion of male and females with a particular name. The
+raw data is stored in the `ssa` directory. The script `ssa.r` generates
+a usable data frame stored in `ssa_national.csv` or `ssa_national.rda`.
+
+Using the [Social Security Administration's baby names by year and
+state][], it is possible to also query the names by state, though this
+data set begins in 1910 rather than 1880. The raw data is stored in the
+`ssa_state` directory. The script `ssa_state.r` generates a usable data
+frame stored in `ssa_state.csv` or `ssa_state.rda`.
 
 Created in collaboration with [Cameron Blevins][].
 
