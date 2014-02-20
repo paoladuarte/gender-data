@@ -15,9 +15,11 @@ state_raw <- read.csv("ssa_state/ssa_state.csv", stringsAsFactors = FALSE,
 # Cast the data so it has male and female columns 
 ssa_state <- state_raw %.% dcast(name + year + state ~ gender, value.var = "count")
 
-ssa_state[is.na(ssa_state)] <- 0
-
 rm(ssa_raw)
+
+ssa_state$name <- tolower(ssa_state$name)
+ssa_state[is.na(ssa_state)] <- 0
+ssa_state <- tbl_df(ssa_state)
 
 save(ssa_state, file = "ssa_state.rda", compress = TRUE)
 write.csv(ssa_state, file = "ssa_state.csv", row.names = F)

@@ -26,6 +26,8 @@ for (year in years) {
 # Make male and female their own columns
 ssa_national <- dcast(ssa_melted, name + year ~ gender, value.var = "count")
 ssa_national[is.na(ssa_national)] <- 0
+ssa_national$name <- tolower(ssa_national$name)
+ssa_national <- tbl_df(ssa_national)
 
 rm(current, year, years, ssa_melted)
 
